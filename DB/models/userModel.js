@@ -1,19 +1,20 @@
 var mongoose = require('mongoose');
 
 var schema = mongoose.Schema({
-  id: {
-    type: Number,
+  username: {
+    type: String,
     unique: true
   },
-  title: String,
-  score: Number,
-  type:String
+  password: String,
+  role: String,
+  attempt:Boolean
 });
 
-var Model = mongoose.model('Story', schema);
+var Model = mongoose.model('user', schema);
 
 
 
 modules.exports.Model = Model;
+
 
 
