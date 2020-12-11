@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 
 var schema = mongoose.Schema({
   username: {
@@ -7,14 +7,9 @@ var schema = mongoose.Schema({
   },
   password: String,
   role: String,
-  attempt:Boolean
+  attempt: Boolean
 });
 
-var Model = mongoose.model('user', schema);
+var Model = mongoose.model("user", schema);
 
-
-
-modules.exports.Model = Model;
-
-
-
+module.exports.Model = Model;
