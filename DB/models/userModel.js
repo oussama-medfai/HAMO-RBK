@@ -14,7 +14,7 @@ var Model = mongoose.model('user', schema);
 
 
 
-modules.exports.Model = Model;
+module.exports.Model = Model;
 
 
 
