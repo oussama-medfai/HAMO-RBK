@@ -31,6 +31,9 @@ var updatecustumer = function (custumer, callbacks) {
     callbacks
   );
 };
+var donothing = function (callbacks) {
+  var x = 0;
+};
 
 module.exports.findAll = findAll;
 module.exports.createone = createone;
