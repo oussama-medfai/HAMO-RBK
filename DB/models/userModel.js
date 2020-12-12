@@ -10,6 +10,5 @@ var schema = mongoose.Schema({
   attempt: Boolean
 });
 
-var Model = mongoose.model("user", schema);
-
+var Model = mongoose.model('user', schema);
 module.exports.Model = Model;

@@ -12,6 +12,5 @@ var creatone = function ({ username, password }, callbacks) {
   });
   user.creatone(user).exec(callbacks);
 };
-
 module.exports.findone = findone;
 module.exports.creatone = creatone;
