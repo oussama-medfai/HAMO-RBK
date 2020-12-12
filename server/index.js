@@ -1,18 +1,4 @@
 var express = require("express");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var bodyParser = require("body-parser");
 var auth = require("./routers/auth.js");
 var user = require("./routers/user.js");
@@ -48,7 +34,6 @@ app.use("/api/categorie", categorie);
 app.use("/api/brand", brand);
 
 app.use("/api/custumer", custumer);
-
 
 app.listen(8000, function () {
   console.log("listening on port 8000");
