@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Listecustumer from "./Listecustumer.jsx";
 import Addcustumer from "./Addcustumer.jsx";
 import Updatecustumer from "./Updatecustumer.jsx";
+
 class Custumer extends Component {
   constructor(props) {
     super(props);
@@ -33,8 +34,8 @@ class Custumer extends Component {
     return (
       <div>
         <div>
-          <button onClick={() => this.changeView("all")}>Home</button>
-          <button onClick={() => this.changeView("add")}>Add</button>
+          <button onClick={() => this.changeView("all")}>List Custumer</button>
+          <button onClick={() => this.changeView("add")}>Add Custumer</button>
         </div>
         <div>{this.renderviews()}</div>
       </div>
