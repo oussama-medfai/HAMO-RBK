@@ -61,9 +61,8 @@ class Article extends Component {
   render() {
     return (
       <div>
-        <h1>Article</h1>
         <button type="button" onClick={() => this.changeView("all")}>
-          Home
+          List Article
         </button>
         <button type="button" onClick={() => this.changeView("Addarticle")}>
           Add Article

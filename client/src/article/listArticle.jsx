@@ -19,14 +19,14 @@ class Listarticle extends Component {
   render() {
     return (
       <div>
-        <h1>All Article</h1>
+        {console.log(this.props.data.brand)}
         {this.props.data.map((elem, key) => {
           return (
             <div key={key}>
               <div>{elem.id}</div>
               <div>{elem.name}</div>
-              <div>{elem.categorie}</div>
-              <div>{elem.brand}</div>
+              <div>{elem.categorie.name}</div>
+              <div>{elem.brand.name}</div>
               <div>{elem.price}</div>
               <div>{elem.quantity}</div>
               <div>{elem.image}</div>
