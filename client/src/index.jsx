@@ -1,16 +1,26 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import ReactDom from "react-dom";
+import Custumer from "./Custumer/Custumer.jsx";
 import Article from "./article/article.jsx";
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  renderview(){}
   render() {
     return (
-      <span>
+      <div>
         <h1>Hello</h1>
         <Article />
-      </span>
+        <Custumer />
+      </div>
+
     );
   }
 }
 export default App;
+ReactDom.render(<App />, document.getElementById("myapp"));
 
-ReactDOM.render(<App />, document.getElementById("myapp"));
+
