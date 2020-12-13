@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import ReactDom from "react-dom";
 import Custumer from "./Custumer/Custumer.jsx";
 import Article from "./article/article.jsx";
 import Navbar from "./navbar/navbar.jsx";
+
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +31,7 @@ class App extends Component {
   }
   render() {
     return (
+
       <div>
         <Navbar changeView={this.changeView} role={this.state.role} />
         <br />
@@ -39,4 +42,7 @@ class App extends Component {
   }
 }
 export default App;
+
+
 ReactDom.render(<App />, document.getElementById("myapp"));
+
