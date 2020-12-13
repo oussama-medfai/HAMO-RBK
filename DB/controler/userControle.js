@@ -9,9 +9,10 @@ var creatone=function({username,password},callbacks){
         username:username ,
           password: password,
           role: 'register',
-          attempt:true 
+          attempt:true
+         
     })
-    user.creatone(user).exec(callbacks)
+    user.save().exec(callbacks)
 }
 module.exports.findone=findone;
 module.exports.creatone=creatone;
