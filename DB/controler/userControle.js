@@ -1,5 +1,7 @@
 var { Model } = require("../models/userModel.js");
 
+
+
 var findone = function (user, callbacks) {
   Model.find({ username: user }).exec(callbacks);
 };
@@ -14,3 +16,4 @@ var creatone = function ({ username, password }, callbacks) {
 };
 module.exports.findone = findone;
 module.exports.creatone = creatone;
+
