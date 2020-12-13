@@ -3,6 +3,7 @@ import ReactDom from "react-dom";
 import Custumer from "./Custumer/Custumer.jsx";
 import Article from "./article/article.jsx";
 import Navbar from "./navbar/navbar.jsx";
+import Bill from "./bill/bill.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class App extends Component {
   }
   renderview() {
     if (this.state.view === "") {
+      return <Bill />;
     } else if (this.state.view === "art") {
       return <Article />;
     } else if (this.state.view === "cus") {

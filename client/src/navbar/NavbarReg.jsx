@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Custumer from "./../custumer/Custumer.jsx";
-
 class NavbarReg extends Component {
   constructor(props) {
     super(props);
