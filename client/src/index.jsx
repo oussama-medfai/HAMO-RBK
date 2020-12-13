@@ -1,23 +1,48 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Login from "./auth/login.jsx";
-import Register from "./auth/register.jsx";
-import GetUser from "./auth/GetUser.jsx";
+import ReactDom from "react-dom";
+import Custumer from "./Custumer/Custumer.jsx";
+import Article from "./article/article.jsx";
+import Navbar from "./navbar/navbar.jsx";
+
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      view: "",
+      role: "manager"
+    };
+    this.renderview = this.renderview.bind(this);
+    this.changeView = this.changeView.bind(this);
+  }
+  changeView(view) {
+    this.setState({
+      view: view
+    });
+  }
+  renderview() {
+    if (this.state.view === "") {
+    } else if (this.state.view === "art") {
+      return <Article />;
+    } else if (this.state.view === "cus") {
+      return <Custumer />;
+    }
+  }
   render() {
     return (
-      <span>
-        <h1>Hello</h1>
-        <Login />
-        <h1>Register</h1>
-        <Register />
-        <h1>User</h1>
-        <GetUser />
-      </span>
+
+      <div>
+        <Navbar changeView={this.changeView} role={this.state.role} />
+        <br />
+        <br />
+        {this.renderview()}
+      </div>
     );
   }
 }
 export default App;
 
-ReactDOM.render(<App />, document.getElementById("myapp"));
+
+ReactDom.render(<App />, document.getElementById("myapp"));
+

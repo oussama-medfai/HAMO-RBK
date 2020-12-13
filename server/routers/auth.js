@@ -5,6 +5,9 @@ var passport = require("passport");
 const bcrypt = require("bcrypt");
 const localStrategy = require("passport-local").Strategy;
 
+
+
+
 router.route("/login").post(function (req, res, next) {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
@@ -38,5 +41,6 @@ router.route("/register").post(function (req, res) {
 router.route("/user").get(function (req, res) {
   res.send(req.user);
 });
+
 
 module.exports = router;

@@ -3,33 +3,32 @@ var bodyParser = require("body-parser");
 const cors = require("cors");
 var auth = require("./routers/auth.js");
 var user = require("./routers/user.js");
-
-const mongoose = require("mongoose");
+var product = require("./routers/product.js");
+var categorie = require("./routers/categorie.js");
+var brand = require("./routers/brand.js");
+var custumer = require("./routers/custumer.js");
+var mongoose = require("mongoose");
 var passport = require("passport");
 var passporLocal = require("passport-local");
-
 const cookieParser = require("cookie-parser");
-
 const session = require("express-session");
 
 var app = express();
 
-// DB Config
-const db = "mongodb://localhost/test2";
-// Connect to MongoDB
-mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
+mongoose.connect("mongodb+srv://root:root@cluster0.raqlc.mongodb.net/MVP", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
-//--------------------
-app.use(bodyParser.json());
+mongoose.connection
+  .once("open", () => console.log("Connected to the database!"))
+  .on("error", (err) => console.log("Error", err));
+
 app.use(express.static(__dirname + "/../client/dist"));
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Express body parser
-app.use(express.urlencoded({ extended: true }));
-// Express session
 app.use(
   session({
     secret: "secretcode",
@@ -49,10 +48,19 @@ app.use(cookieParser("secretcode"));
 app.use(passport.initialize());
 app.use(passport.session());
 require("./routers/passportConfig")(passport);
-// Routes
+
 app.use("/api/auth", auth);
 
 app.use("/api/user", user);
+
+app.use("/api/product", product);
+
+app.use("/api/categorie", categorie);
+
+app.use("/api/brand", brand);
+
+app.use("/api/custumer", custumer);
+
 app.listen(8000, function () {
   console.log("listening on port 8000");
 });
