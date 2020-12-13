@@ -6,25 +6,7 @@ class NavbarManger extends Component {
   }
 
   render() {
-    return (
-      <nav>
-        <a href="#" onClick={() => this.props.changeView("")}>
-          Home
-        </a>
-        <a href="#" onClick={() => this.props.changeView("art")}>
-          Article
-        </a>
-        <a href="#" onClick={() => this.props.changeView("cus")}>
-          Custumer
-        </a>
-        <a href="#" onClick={() => this.props.changeView("stat")}>
-          statistic
-        </a>
-        <a href="#" onClick={() => this.props.changeView("order")}>
-          Order
-        </a>
-      </nav>
-    );
+    return;
   }
 }
 export default NavbarManger;

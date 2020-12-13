@@ -28,7 +28,7 @@ function Login() {
 
   return (
     <div>
-      <div class="login-box">
+      <div >
         <h1>Login</h1>
         <input
           placeholder="username"

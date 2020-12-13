@@ -1,12 +1,12 @@
 var mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
   username: String,
-  password: String
+  password: String,
   date: {
     type: Date,
     default: Date.now
   },
-   password: String,
+  password: String,
   role: String,
   attempt: Boolean
 });
@@ -14,4 +14,3 @@ const UserSchema = new mongoose.Schema({
 const Model = mongoose.model("user", UserSchema);
 
 module.exports.Model = Model;
-
