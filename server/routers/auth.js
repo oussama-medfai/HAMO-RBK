@@ -28,7 +28,9 @@ router.route("/register").post(function (req, res) {
 
       const newUser = new Model({
         username: req.body.username,
-        password: hashedPassword
+        password: hashedPassword,
+        role: "manager",
+        attempt: false
       });
       await newUser.save();
       res.send("User Created");
@@ -36,7 +38,16 @@ router.route("/register").post(function (req, res) {
   });
 });
 router.route("/user").get(function (req, res) {
-  res.send(req.user);
+  console.log(req.user, "hello");
+  if (req.user) {
+    Model.find({ username: req.user.username }, (err, data) => {
+      if (err) throw err;
+      console.log(data);
+      res.send(data);
+    });
+  } else {
+    res.send([{ username: "", role: "" }]);
+  }
 });
 
 module.exports = router;

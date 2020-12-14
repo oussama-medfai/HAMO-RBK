@@ -30,7 +30,7 @@ class BillLists extends Component {
             <tr>
               <th>Product</th>
               <th>Quantity</th>
-              <th></th>
+              <th>Price</th>
             </tr>
           </thead>
           <tbody>
@@ -59,10 +59,6 @@ class BillLists extends Component {
               </td>
             </tr>
             {/* <BillList /> */}
-            <List
-              product={this.props.product}
-              listproduct={this.props.listproduct}
-            />
           </tbody>
         </table>
       </div>

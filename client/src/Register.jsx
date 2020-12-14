@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Custumer from "./Custumer/Custumer.jsx";
-import Article from "./article/article.jsx";
-import Register from "./auth/AddRegister.jsx";
+import Bill from "./bill/bill.jsx";
 
-class Manager extends Component {
+class Regist extends Component {
   constructor(props) {
     super(props);
   }
@@ -16,22 +15,18 @@ class Manager extends Component {
           <nav>
             <ul>
               <li>
+                {" "}
                 <Link to={"/"}> Home </Link>
               </li>
 
               <li>
-                <Link to={"/custumer"}> Customer </Link>
+                {" "}
+                <Link to={"/custumer"}> custumer </Link>
               </li>
 
               <li>
-                <Link to={"/article"}> Article </Link>
-              </li>
-
-              <li>
-                <Link to={"/register"}> Register </Link>
-              </li>
-              <li>
-                <a>Welcome {this.props.username}</a>
+                {" "}
+                <Link to={"/Bill"}> Bill </Link>
               </li>
             </ul>
           </nav>
@@ -39,8 +34,7 @@ class Manager extends Component {
             <Switch>
               <Route exact path="/" component={Custumer} />
               <Route path="/custumer" component={Custumer} />
-              <Route path="/article" component={Article} />
-              <Route path="/register" component={Register} />
+              <Route path="/bill" component={Bill} />
             </Switch>
           </div>
         </div>
@@ -48,4 +42,4 @@ class Manager extends Component {
     );
   }
 }
-export default Manager;
+export default Regist;

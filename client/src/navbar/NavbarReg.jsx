@@ -9,6 +9,7 @@ class NavbarReg extends Component {
         <a href="">Home</a>
         <a href="">Bill</a>
         <a href="">Add Custumer</a>
+        
       </nav>
     );
   }

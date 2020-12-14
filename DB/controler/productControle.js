@@ -1,7 +1,7 @@
 var { Modelproduct } = require("../models/productModel");
 
 var findproduct = function (callbacks) {
-  Modelproduct.find().populate("brand").populate("categorie").exec(callbacks);
+  Modelproduct.find({}).populate("brand").populate("categorie").exec(callbacks);
 };
 var creatproduct = function (obj, callbacks) {
   const product = new Modelproduct({

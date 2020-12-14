@@ -12,7 +12,7 @@ var passport = require("passport");
 var passporLocal = require("passport-local");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-
+const bill = require("./routers/bill.js");
 var app = express();
 
 mongoose.connect("mongodb+srv://root:root@cluster0.raqlc.mongodb.net/MVP", {
@@ -61,6 +61,7 @@ app.use("/api/brand", brand);
 
 app.use("/api/custumer", custumer);
 
+app.use("/api/bill", bill);
 app.listen(8000, function () {
   console.log("listening on port 8000");
 });

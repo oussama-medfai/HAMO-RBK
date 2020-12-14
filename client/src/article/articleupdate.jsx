@@ -50,89 +50,92 @@ class Articleupdate extends React.Component {
 
   render() {
     return (
-      <div>
-        <label>
-          ID :<br />
-          <input
-            type="text"
-            name="id"
-            value={this.state.id}
-            onChange={this.handelChange}
-          />
-        </label>
-        <br />
-        <label>
-          Name :<br />
-          <input
-            type="text"
-            name="name"
-            value={this.state.name}
-            onChange={this.handelChange}
-          />
-        </label>
-        <br />
-        <label>
-          categorie :<br />
-          <input
-            type="text"
-            name="categorie"
-            value={this.state.categorie}
-            onChange={this.handelChange}
-          />
-        </label>
-        <br />
-        <label>
-          brand :<br />
-          <input
-            type="text"
-            name="brand"
-            value={this.state.brand}
-            onChange={this.handelChange}
-          />
-        </label>
-        <br />
-        <label>
-          price :<br />
-          <input
-            type="number"
-            name="price"
-            value={this.state.price}
-            onChange={this.handelChange}
-          />
-        </label>
-        <br />
-        <label>
-          Quantity :<br />
-          <input
-            type="number"
-            name="quantity"
-            value={this.state.quantity}
-            onChange={this.handelChange}
-          />
-        </label>
-        <br />
-        <label>
-          Image :<br />
-          <input
-            type="text"
-            name="image"
-            value={this.state.image}
-            onChange={this.handelChange}
-          />
-        </label>
-        <br />
-        <label>
-          description :<br />
-          <input
-            type="textarea"
-            name="description"
-            value={this.state.description}
-            onChange={this.handelChange}
-          />
-        </label>
-        <br />
-        <input type="submit" value="Update" onClick={this.handelupdate} />
-        <br />
+      <div className="card">
+        <div className="container">
+          <h1>Update Product</h1>
+          <label>
+            ID :<br />
+            <input
+              type="text"
+              name="id"
+              value={this.state.id}
+              onChange={this.handelChange}
+            />
+          </label>
+          <br />
+          <label>
+            Name :<br />
+            <input
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={this.handelChange}
+            />
+          </label>
+          <br />
+          <label>
+            categorie :<br />
+            <input
+              type="text"
+              name="categorie"
+              value={this.state.categorie}
+              onChange={this.handelChange}
+            />
+          </label>
+          <br />
+          <label>
+            brand :<br />
+            <input
+              type="text"
+              name="brand"
+              value={this.state.brand}
+              onChange={this.handelChange}
+            />
+          </label>
+          <br />
+          <label>
+            price :<br />
+            <input
+              type="number"
+              name="price"
+              value={this.state.price}
+              onChange={this.handelChange}
+            />
+          </label>
+          <br />
+          <label>
+            Quantity :<br />
+            <input
+              type="number"
+              name="quantity"
+              value={this.state.quantity}
+              onChange={this.handelChange}
+            />
+          </label>
+          <br />
+          <label>
+            Image :<br />
+            <input
+              type="text"
+              name="image"
+              value={this.state.image}
+              onChange={this.handelChange}
+            />
+          </label>
+          <br />
+          <label>
+            description :<br />
+            <input
+              type="textarea"
+              name="description"
+              value={this.state.description}
+              onChange={this.handelChange}
+            />
+          </label>
+          <br />
+          <input type="submit" value="Update" onClick={this.handelupdate} />
+          <br />
+        </div>
       </div>
     );
   }

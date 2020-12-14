@@ -9,14 +9,14 @@ class List extends Component {
   renderView() {
     if (this.props.listproduct) {
       return this.props.listproduct.map((ele) => (
-        <tr>
-          <td>{ele.product.name}</td>
-          <td>{ele.product.price}</td>
-          <td>{ele.number}</td>
+        <div>
+          <div>{ele.product.name}</div>
+          <div>{ele.product.price}$</div>
+          <div>{ele.number}</div>
           <td>
             <button>Delete</button>
           </td>
-        </tr>
+        </div>
       ));
     }
   }

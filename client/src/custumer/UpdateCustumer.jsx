@@ -37,96 +37,103 @@ class UpdateCustumer extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>Update Custumer:</h1>
-        <form onSubmit={this.editCustumer}>
-          <label>
-            ID:
-            <input
-              readOnly="readonly"
-              name="id"
-              type="text"
-              required
-              value={this.state.id}
-              onChange={this.onChangeHandler}
-            />
-          </label>
-          <br></br>
-          <br></br>
-          <label>
-            Name:
-            <input
-              name="name"
-              type="text"
-              required
-              value={this.state.name}
-              onChange={this.onChangeHandler}
-            />
-          </label>
-          <br></br>
-          <br></br>
-          <label>
-            Genre:
-            <input
-              name="genre"
-              type="text"
-              required
-              value={this.state.genre}
-              onChange={this.onChangeHandler}
-            />
-          </label>
-          <br></br>
-          <br></br>
-          <label>
-            Date:
-            <input
-              name="date"
-              type="Date"
-              required
-              value={this.state.date}
-              onChange={this.onChangeHandler}
-            />
-          </label>
-          <br></br>
-          <br></br>
-          <label>
-            Phone:
-            <input
-              name="phone"
-              type="number"
-              required
-              value={this.state.phone}
-              onChange={this.onChangeHandler}
-            />
-          </label>
-          <br></br>
-          <br></br>
-          <label>
-            Email:
-            <input
-              name="email"
-              type="Email"
-              required
-              value={this.state.email}
-              onChange={this.onChangeHandler}
-            />
-          </label>
-          <br></br>
-          <br></br>
-          <label>
-            Points:
-            <input
-              name="points"
-              type="number"
-              required
-              value={this.state.points}
-              onChange={this.onChangeHandler}
-            />
-          </label>
-          <br></br>
-          <br></br>
-          <input type="submit" value="Submit" />
-        </form>
+      <div className="card">
+        <div className="container">
+          <h1>Update Custumer:</h1>
+          <form onSubmit={this.editCustumer}>
+            <label>
+              ID: <br />
+              <input
+                readOnly="readonly"
+                name="id"
+                type="text"
+                required
+                value={this.state.id}
+                onChange={this.onChangeHandler}
+              />
+            </label>
+            <br></br>
+            <br></br>
+            <label>
+              Name:
+              <br />
+              <input
+                name="name"
+                type="text"
+                required
+                value={this.state.name}
+                onChange={this.onChangeHandler}
+              />
+            </label>
+            <br></br>
+            <br></br>
+            <label>
+              Genre:
+              <br />
+              <input
+                name="genre"
+                type="text"
+                required
+                value={this.state.genre}
+                onChange={this.onChangeHandler}
+              />
+            </label>
+            <br></br>
+            <br></br>
+            <label>
+              Date:
+              <br />
+              <input
+                name="date"
+                type="Date"
+                required
+                value={this.state.date}
+                onChange={this.onChangeHandler}
+              />
+            </label>
+            <br></br>
+            <br></br>
+            <label>
+              Phone:
+              <br />
+              <input
+                name="phone"
+                type="number"
+                required
+                value={this.state.phone}
+                onChange={this.onChangeHandler}
+              />
+            </label>
+            <br />
+            <label>
+              Email:
+              <br></br>
+              <br></br>
+              <input
+                name="email"
+                type="Email"
+                required
+                value={this.state.email}
+                onChange={this.onChangeHandler}
+              />
+            </label>
+            <br></br>
+            <br></br>
+            <label>
+              Points: <br />
+              <input
+                name="points"
+                type="number"
+                required
+                value={this.state.points}
+                onChange={this.onChangeHandler}
+              />
+            </label>
+            <br></br>
+            <br></br>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     );
   }

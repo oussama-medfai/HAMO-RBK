@@ -4,6 +4,7 @@ import $ from "jquery";
 class Listarticle extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
   delete(id) {
     $.ajax({
@@ -19,26 +20,29 @@ class Listarticle extends Component {
   render() {
     return (
       <div>
-        {console.log(this.props.data.brand)}
-        {this.props.data.map((elem, key) => {
+        <h1>Product :</h1>
+        {this.props.data.map((elem, index) => {
           return (
-            <div key={key}>
-              <div>{elem.id}</div>
-              <div>{elem.name}</div>
-              <div>{elem.categorie.name}</div>
-              <div>{elem.brand.name}</div>
-              <div>{elem.price}</div>
-              <div>{elem.quantity}</div>
-              <div>{elem.image}</div>
-              <div>{elem.description}</div>
-              <button
-                type="submit"
-                onClick={() => this.props.changeView("Update", elem)}>
-                Update
-              </button>
-              <button type="submit" onClick={() => this.delete(elem._id)}>
-                Delete
-              </button>
+            <div className="card">
+              <div key={index} className="container">
+                <h1>{elem.name}</h1>
+                <p>{elem.categorie.name}</p>
+                <p>{elem.brand.name}</p>
+                <p>{elem.price}</p>
+                <p>{elem.quantity}</p>
+                <p>{elem.description}</p>
+                <small>
+                  <button
+                    type="submit"
+                    onClick={() => this.props.changeView("Update", elem)}>
+                    Update
+                  </button>
+
+                  <button type="submit" onClick={() => this.delete(elem._id)}>
+                    Delete
+                  </button>
+                </small>
+              </div>
             </div>
           );
         })}

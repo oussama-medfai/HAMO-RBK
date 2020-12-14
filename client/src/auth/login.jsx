@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function Login() {
+function Login(props) {
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const login = () => {
@@ -13,22 +13,12 @@ function Login() {
       },
       withCredentials: true,
       url: "http://localhost:8000/api/auth/login"
-    }).then((res) => console.log(res));
+    }).then((res) => props.Getsession());
   };
-  // const getUser = () => {
-  //   axios({
-  //     method: "GET",
-  //     withCredentials: true,
-  //     url: "http://localhost:8000/user"
-  //   }).then((res) => {
-  //     setData(res.data);
-  //     console.log(res.data);
-  //   });
-  // };
 
   return (
     <div>
-      <div >
+      <div>
         <h1>Login</h1>
         <input
           placeholder="username"
@@ -40,11 +30,6 @@ function Login() {
         />
         <button onClick={login}>Submit</button>
       </div>
-
-      {/* <div>
-        <h1>Get User</h1>
-        <button onClick={getUser}> Get </button>
-      </div> */}
     </div>
   );
 }

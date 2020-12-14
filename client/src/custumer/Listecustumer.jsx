@@ -65,22 +65,24 @@ class Listecustumer extends Component {
   render() {
     return (
       <div>
-        <h1>Custumers:</h1>
-        <table>
+        <h1>Customers:</h1>
+        <table id="customers">
           <thead>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Genre</th>
-            <th>Date of birth</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>Points</th>
-            <th></th>
-            <th></th>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Genre</th>
+              <th>Date of birth</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Points</th>
+              <th></th>
+              <th></th>
+            </tr>
           </thead>
           <tbody>
             {this.state.custumers.map((element, index) => (
-              <tr>
+              <tr key={index}>
                 <td>{element.id}</td>
                 <td>{element.name}</td>
                 <td>{element.genre}</td>

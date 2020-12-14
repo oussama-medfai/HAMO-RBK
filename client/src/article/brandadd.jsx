@@ -37,41 +37,43 @@ class Brandeadd extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <form onSubmit={this.handelsubmit}>
-          <h1>Add Brand</h1>
-          <label>
-            ID :<br />
-            <input
-              type="text"
-              name="id"
-              value={this.state.id}
-              onChange={this.handelChange}
-            />
-          </label>
-          <br />
-          <label>
-            Name :<br />
-            <input
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handelChange}
-            />
-          </label>
-          <br />
-          <label>
-            desciption :<br />
-            <input
-              type="textarea"
-              name="description"
-              value={this.state.description}
-              onChange={this.handelChange}
-            />
-          </label>
-          <br />
-          <input type="submit" value="Envoyer" />
-        </form>
+      <div className="card">
+        <div className="container">
+          <form onSubmit={this.handelsubmit}>
+            <h1>Add Brand</h1>
+            <label>
+              ID :<br />
+              <input
+                type="text"
+                name="id"
+                value={this.state.id}
+                onChange={this.handelChange}
+              />
+            </label>
+            <br />
+            <label>
+              Name :<br />
+              <input
+                type="text"
+                name="name"
+                value={this.state.name}
+                onChange={this.handelChange}
+              />
+            </label>
+            <br />
+            <label>
+              desciption :<br />
+              <input
+                type="textarea"
+                name="description"
+                value={this.state.description}
+                onChange={this.handelChange}
+              />
+            </label>
+            <br />
+            <input type="submit" value="Envoyer" />
+          </form>
+        </div>
       </div>
     );
   }
