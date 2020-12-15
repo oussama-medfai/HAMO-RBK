@@ -11,7 +11,7 @@ class Bill extends Component {
       product: [],
       listproduct: [],
       custumors: [],
-      custumor: "",
+      custumer: "",
       total: 0
     };
     this.addproduct = this.addproduct.bind(this);
@@ -50,13 +50,14 @@ class Bill extends Component {
     for (var i = 0; i < this.state.listproduct.length; i++) {
       let obj = {
         product: this.state.listproduct[i].product._id,
-        quantity: this.state.listproduct[i].quantity
+        quantity: this.state.listproduct[i].quantity,
+        name: this.state.listproduct[i].product.name
       };
       order.push(obj);
     }
 
     let send = {
-      custumor: this.state.custumor,
+      custumer: this.state.custumer,
       order: order,
       total: this.state.total
     };
@@ -65,7 +66,12 @@ class Bill extends Component {
       url: "/api/bill",
       data: send,
       success: (data) => {
-        console.log(data);
+        this.setState({
+          product: [],
+          listproduct: [],
+          custumors: [],
+          total: 0
+        });
       },
       error: (err) => console.log(err)
     });
@@ -104,7 +110,7 @@ class Bill extends Component {
     return (
       <div>
         <select
-          name="custumor"
+          name="custumer"
           value={this.state.custumor}
           onChange={this.handlechange}>
           <option value="">none</option>

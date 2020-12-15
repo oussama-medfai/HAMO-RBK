@@ -45,11 +45,24 @@ class Article extends Component {
         <Articleadd getProduct={this.getProduct} changeView={this.changeView} />
       );
     } else if (this.state.view === "Update") {
-      return <Articleupdate data={this.state.mod} />;
+      return (
+        <Articleupdate
+          data={this.state.mod}
+          getProduct={this.getProduct}
+          changeView={this.changeView}
+        />
+      );
     } else if (this.state.view === "Addbrand") {
-      return <Brandeadd />;
+      return (
+        <Brandeadd getProduct={this.getProduct} changeView={this.changeView} />
+      );
     } else if (this.state.view === "Addcategorie") {
-      return <Categorieadd />;
+      return (
+        <Categorieadd
+          getProduct={this.getProduct}
+          changeView={this.changeView}
+        />
+      );
     }
   }
 

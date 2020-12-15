@@ -11,8 +11,8 @@ class Listarticle extends Component {
       type: "DELETE",
       url: `/api/product/${id}`,
       success: (data) => {
+        this.props.getProduct();
         this.props.changeView("all");
-        console.log(data);
       },
       error: (err) => console.log(err)
     });

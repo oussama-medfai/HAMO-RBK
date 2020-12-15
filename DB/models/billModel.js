@@ -5,7 +5,8 @@ const BillSchema = mongoose.Schema({
   order: [
     {
       product: { type: mongoose.Schema.Types.ObjectId, ref: "product" },
-      quantity: Number
+      quantity: Number,
+      name: String
     }
   ],
   total: Number

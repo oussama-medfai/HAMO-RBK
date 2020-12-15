@@ -43,7 +43,10 @@ class Articleupdate extends React.Component {
       type: "PUT",
       url: "/api/product",
       data: log,
-      success: (data) => console.log(data),
+      success: (data) => {
+        this.props.getProduct();
+        this.props.changeView("all");
+      },
       error: (err) => console.log(err)
     });
   }

@@ -30,7 +30,10 @@ class Brandeadd extends React.Component {
       type: "POST",
       url: "/api/brand",
       data: data,
-      success: (data) => console.log(data),
+      success: (data) => {
+        this.props.getProduct();
+        this.props.changeView("all");
+      },
       error: (err) => console.log(err)
     });
   }

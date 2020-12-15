@@ -20,7 +20,7 @@ function Register() {
     <div>
       <h1>Add Register</h1>
 
-      <div class="input-container">
+      <div className="input-container">
         <div>
           <h5>Username</h5>
           <br></br>

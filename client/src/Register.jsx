@@ -15,18 +15,20 @@ class Regist extends Component {
           <nav>
             <ul>
               <li>
-                {" "}
                 <Link to={"/"}> Home </Link>
               </li>
 
               <li>
-                {" "}
                 <Link to={"/custumer"}> custumer </Link>
               </li>
 
               <li>
-                {" "}
                 <Link to={"/Bill"}> Bill </Link>
+              </li>
+              <li>
+                <a onClick={() => this.props.logout()}>
+                  Welcome {this.props.username}
+                </a>
               </li>
             </ul>
           </nav>

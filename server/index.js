@@ -13,6 +13,7 @@ var passporLocal = require("passport-local");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const bill = require("./routers/bill.js");
+const stat = require("./routers/stat.js");
 var app = express();
 
 mongoose.connect("mongodb+srv://root:root@cluster0.raqlc.mongodb.net/MVP", {
@@ -60,6 +61,8 @@ app.use("/api/categorie", categorie);
 app.use("/api/brand", brand);
 
 app.use("/api/custumer", custumer);
+
+app.use("/api/stat", stat);
 
 app.use("/api/bill", bill);
 app.listen(8000, function () {
