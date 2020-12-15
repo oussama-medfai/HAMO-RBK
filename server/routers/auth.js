@@ -29,7 +29,7 @@ router.route("/register").post(function (req, res) {
       const newUser = new Model({
         username: req.body.username,
         password: hashedPassword,
-        role: "manager",
+        role: "register",
         attempt: false
       });
       await newUser.save();

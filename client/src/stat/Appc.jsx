@@ -6,7 +6,8 @@ class Appc extends Component {
   constructor() {
     super();
     this.state = {
-      chartData: {}
+      chartData: {},
+      loading: false
     };
     this.getChartData = this.getChartData.bind(this);
   }
@@ -28,28 +29,30 @@ class Appc extends Component {
         label: label,
         data: x
       });
+      this.setState({
+        loading: true,
+        chartData: {
+          labels: label,
+          datasets: [
+            {
+              label: "Product",
+              // data: [617594, 181045, 153060, 106519, 105162, 95072]
+              data: x,
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(54, 162, 235, 0.6)",
+                "rgba(255, 206, 86, 0.6)",
+                "rgba(75, 192, 192, 0.6)",
+                "rgba(153, 102, 255, 0.6)",
+                "rgba(255, 159, 64, 0.6)",
+                "rgba(255, 99, 132, 0.6)"
+              ]
+            }
+          ]
+        }
+      });
     });
-    // this.setState({
-    //   chartData: {
-    //     labels: this.props.label,
-    //     datasets: [
-    //       {
-    //         label: "Product",
-    //         // data: [617594, 181045, 153060, 106519, 105162, 95072]
-    //         data: this.props.data,
-    //         backgroundColor: [
-    //           "rgba(255, 99, 132, 0.6)",
-    //           "rgba(54, 162, 235, 0.6)",
-    //           "rgba(255, 206, 86, 0.6)",
-    //           "rgba(75, 192, 192, 0.6)",
-    //           "rgba(153, 102, 255, 0.6)",
-    //           "rgba(255, 159, 64, 0.6)",
-    //           "rgba(255, 99, 132, 0.6)"
-    //         ]
-    //       }
-    //     ]
-    //   }
-    // });
+
     //   success: (data) => {
 
     //     console.log(label, x);
@@ -64,11 +67,13 @@ class Appc extends Component {
         <div className="Appc-header">
           <h2>Static of Articles</h2>
         </div>
-        <Chart
-          chartData={this.state.chartData}
-          location="Massachusetts"
-          legendPosition="bottom"
-        />
+        {this.state.loading && (
+          <Chart
+            chartData={this.state.chartData}
+            location="Massachusetts"
+            legendPosition="bottom"
+          />
+        )}
       </div>
     );
   }

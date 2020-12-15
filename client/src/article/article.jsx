@@ -38,7 +38,11 @@ class Article extends Component {
   renderView() {
     if (this.state.view === "all") {
       return (
-        <Listarticle changeView={this.changeView} data={this.state.data} />
+        <Listarticle
+          changeView={this.changeView}
+          data={this.state.data}
+          getProduct={this.getProduct}
+        />
       );
     } else if (this.state.view === "Addarticle") {
       return (
