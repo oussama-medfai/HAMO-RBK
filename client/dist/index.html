@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HAMO</title>
+    <style>
+      body {
+        background-color: #e3e3e3;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #1c1c1c;
+      }
+
+      li {
+        float: left;
+      }
+      .center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      li a:hover {
+        background-color: rgb(48, 47, 47);
+      }
+      .card {
+        display: inline-flex;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 20%;
+        height: 40%;
+        margin: 1%;
+        padding: 3%;
+        background-color: #65cab8;
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      small {
+        align-items: right;
+      }
+
+      button {
+        background-color: #adaaaa;
+        transition-duration: 0.4s;
+        font-family: "JetBrains Mono", monospace;
+        float: right;
+      }
+
+      button:hover {
+        background-color: #8b8b8b; /* Green */
+        color: white;
+      }
+      label {
+        font-family: "JetBrains Mono", monospace;
+        font-family: "Rajdhani", sans-serif;
+      }
+      h1 {
+        font-family: "JetBrains Mono", monospace;
+      }
+      h3 {
+        font-family: "JetBrains Mono", monospace;
+      }
+      #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #customers td,
+      #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      #customers tr:hover {
+        background-color: #ddd;
+      }
+
+      #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #65cab8;
+        color: white;
+      }
+      input[type="text"]:focus {
+        background-color: rgb(234, 246, 250);
+      }
+      input[type="textarea"]:focus {
+        background-color: rgb(234, 246, 250);
+      }
+      input[type="Email"]:focus {
+        background-color: rgb(234, 246, 250);
+      }
+      input[type="email"]:focus {
+        background-color: rgb(234, 246, 250);
+      }
+      input[type="number"]:focus {
+        background-color: rgb(234, 246, 250);
+      }
+
+      .input-container {
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      /* Style the input fields */
+      .input-field {
+        width: 100%;
+        padding: 10px;
+        outline: none;
+      }
+
+      /* .input-field:focus {
+        border: 2px solid rgb(201, 201, 201);
+      } */
+
+      /* Set a style for the submit button */
+      .btn {
+        background-color: rgb(204, 205, 206);
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+
+      .btn:hover {
+        opacity: 1;
+      }
+      sidenav {
+        width: 130px;
+        position: fixed;
+        z-index: 1;
+        top: 20px;
+        left: 10px;
+        background: #eee;
+        overflow-x: hidden;
+        padding: 8px 0;
+      }
+
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #96a3ad;
+        display: block;
+      }
+
+      .sidenav a:hover {
+        color: #8b9094;
+      }
+
+      .main {
+        margin-left: 140px; /* Same width as the sidebar + left position in px */
+        font-size: 28px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      .center {
+        margin: auto;
+        width: 70%;
+        padding: 10px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Add padding to containers */
+      .container {
+        padding: 16px;
+        background-color: white;
+      }
+
+      /* Full-width input fields */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .right {
+        position: absolute;
+        right: 70px;
+        width: 300px;
+        padding: 10px;
+      }
+
+      /* Overwrite default styles of hr */
+      /* hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      } */
+
+      /* Set a style for the submit button */
+      .registerbtn {
+        background-color: #48a191;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+
+      .registerbtn:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myapp"></div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
