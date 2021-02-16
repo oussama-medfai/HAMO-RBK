@@ -11,7 +11,7 @@ class Bill extends Component {
       product: [],
       listproduct: [],
       custumors: [],
-      custumer: "",
+      custumor: "",
       total: 0
     };
     this.addproduct = this.addproduct.bind(this);
@@ -30,13 +30,11 @@ class Bill extends Component {
       }
     }
     old.push(x);
-    console.log(old);
     let total = 0;
     for (var i = 0; i < old.length; i++) {
       total = total + old[i].product.price * old[i].quantity;
     }
     total += total * (this.state.tax / 100);
-    console.log();
     this.setState({
       total: total
     });
@@ -50,14 +48,13 @@ class Bill extends Component {
     for (var i = 0; i < this.state.listproduct.length; i++) {
       let obj = {
         product: this.state.listproduct[i].product._id,
-        quantity: this.state.listproduct[i].quantity,
-        name: this.state.listproduct[i].product.name
+        quantity: this.state.listproduct[i].quantity
       };
       order.push(obj);
     }
 
     let send = {
-      custumer: this.state.custumer,
+      custumor: this.state.custumor,
       order: order,
       total: this.state.total
     };
@@ -66,12 +63,7 @@ class Bill extends Component {
       url: "/api/bill",
       data: send,
       success: (data) => {
-        this.setState({
-          product: [],
-          listproduct: [],
-          custumors: [],
-          total: 0
-        });
+        console.log(data);
       },
       error: (err) => console.log(err)
     });
@@ -80,7 +72,6 @@ class Bill extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
-    console.log(this.state.product);
   }
   componentDidMount() {
     $.ajax({
@@ -90,7 +81,6 @@ class Bill extends Component {
         this.setState({
           product: data
         });
-        console.log(data);
       },
       error: (err) => console.log(err)
     });
@@ -101,7 +91,6 @@ class Bill extends Component {
         this.setState({
           custumors: data
         });
-        console.log(data);
       },
       error: (err) => console.log(err)
     });
@@ -110,7 +99,7 @@ class Bill extends Component {
     return (
       <div>
         <select
-          name="custumer"
+          name="custumor"
           value={this.state.custumor}
           onChange={this.handlechange}>
           <option value="">none</option>
@@ -130,16 +119,14 @@ class Bill extends Component {
               listproduct={this.state.listproduct}
             />
           </div>
-          <div>
-            <div>Subtotal</div>
-          </div>
-          <div>
+          <div className="right">
+            <h3>Subtotal</h3>
             <div>Tax{this.state.tax}% </div>
             <div>Total {this.state.total} $</div>
           </div>
-          <div>
+          {/* <div>
             <button onClick={this.submitbill}>add</button>
-          </div>
+          </div> */}
         </div>
       </div>
     );

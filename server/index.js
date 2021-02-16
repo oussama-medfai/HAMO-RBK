@@ -65,6 +65,7 @@ app.use("/api/custumer", custumer);
 app.use("/api/stat", stat);
 
 app.use("/api/bill", bill);
+app.get("*", express.static(__dirname + "/../client/dist/"));
 app.listen(8000, function () {
   console.log("listening on port 8000");
 });

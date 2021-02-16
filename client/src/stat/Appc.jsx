@@ -16,7 +16,6 @@ class Appc extends Component {
     this.getChartData();
   }
   getChartData() {
-    console.log("zzz", this.props.label, this.props.data);
     let label = [];
     let x = [];
     $.get("/api/stat").done((data) => {
@@ -24,7 +23,6 @@ class Appc extends Component {
         label.push(data[i]["_id"]);
         x.push(data[i]["total"]);
       }
-      console.log(x, label);
       this.setState({
         label: label,
         data: x
@@ -52,13 +50,6 @@ class Appc extends Component {
         }
       });
     });
-
-    //   success: (data) => {
-
-    //     console.log(label, x);
-    //   },
-    //   error: (er) => console.log(er)
-    // });
   }
 
   render() {

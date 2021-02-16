@@ -34,8 +34,16 @@ class Custumer extends Component {
     return (
       <div>
         <div>
-          <button onClick={() => this.changeView("all")}>List Custumer</button>
-          <button onClick={() => this.changeView("add")}>Add Custumer</button>
+          {/* <button onClick={() => this.changeView("all")}>List Custumer</button>
+          <button onClick={() => this.changeView("add")}>Add Custumer</button> */}
+          <div className="sidenav">
+            <a href="#about" onClick={() => this.changeView("all")}>
+              Customer List
+            </a>
+            <a href="#services" onClick={() => this.changeView("add")}>
+              Add Customer
+            </a>
+          </div>
         </div>
         <div>{this.renderviews()}</div>
       </div>

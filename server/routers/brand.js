@@ -12,7 +12,6 @@ router.route("/").get(function (req, res) {
   });
 });
 router.route("/").post(function (req, res) {
-  console.log(req.body);
   createbrand(req.body, (er, data) => {
     if (er) {
       res.sendStatus(500);

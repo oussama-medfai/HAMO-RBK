@@ -20,7 +20,6 @@ class Categorieadd extends React.Component {
 
   handelsubmit(e) {
     e.preventDefault();
-    console.log(this.state.name);
     var data = {
       id: this.state.id,
       name: this.state.name,
@@ -30,10 +29,7 @@ class Categorieadd extends React.Component {
       type: "POST",
       url: "/api/categorie",
       data: data,
-      success: (data) => {
-        this.props.getProduct();
-        this.props.changeView("all");
-      },
+      success: (data) => console.log(data),
       error: (err) => console.log(err)
     });
   }

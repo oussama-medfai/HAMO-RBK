@@ -4,7 +4,7 @@ import $ from "jquery";
 import Login from "./auth/login.jsx";
 import Manager from "./manager.jsx";
 import Regist from "./Register.jsx";
-import { CookiesProvider, Cookies } from "react-cookie";
+import { BrowserRouter } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -19,35 +19,33 @@ class App extends Component {
     this.changeView = this.changeView.bind(this);
     this.Getsession = this.Getsession.bind(this);
     this.logout = this.logout.bind(this);
-    this.getStat = this.getStat.bind(this);
   }
   changeView(view) {
     this.setState({
       view: view
     });
   }
-  getStat() {
 
-  }
   logout() {
-    const { cookies } = this.props;
-    cookies.remove("username");
-
-    this.setState({
-      username: "",
-      role: ""
+    $.ajax({
+      type: "GET",
+      url: "/api/auth/logout",
+      success: (data) => {
+        this.Getsession();
+      },
+      error: (err) => {
+        console.log(err);
+      }
     });
-    this.Getsession();
   }
   Getsession() {
     $.ajax({
       type: "GET",
       url: "/api/auth/user",
       success: (data) => {
-        console.log(data);
         this.setState({
-          username: data[0].username,
-          role: data[0].role
+          username: data.username,
+          role: data.role
         });
       },
       error: (err) => {
@@ -55,9 +53,7 @@ class App extends Component {
       }
     });
   }
-  componentDidMount() {
-    this.getStat();
-  }
+  componentDidMount() {}
   renderview() {
     if (this.state.username === "") {
       return (
@@ -96,9 +92,4 @@ class App extends Component {
 }
 export default App;
 
-ReactDom.render(
-  <CookiesProvider>
-    <App />
-  </CookiesProvider>,
-  document.getElementById("myapp")
-);
+ReactDom.render(<App />, document.getElementById("myapp"));

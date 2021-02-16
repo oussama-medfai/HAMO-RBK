@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import $ from "jquery";
 import Listarticle from "./listArticle.jsx";
 import Articleadd from "./articleadd.jsx";
 import Articleupdate from "./articleupdate.jsx";
@@ -38,57 +37,54 @@ class Article extends Component {
   renderView() {
     if (this.state.view === "all") {
       return (
-        <Listarticle
-          changeView={this.changeView}
-          data={this.state.data}
-          getProduct={this.getProduct}
-        />
+        <Listarticle changeView={this.changeView} data={this.state.data} />
       );
     } else if (this.state.view === "Addarticle") {
       return (
         <Articleadd getProduct={this.getProduct} changeView={this.changeView} />
       );
     } else if (this.state.view === "Update") {
-      return (
-        <Articleupdate
-          data={this.state.mod}
-          getProduct={this.getProduct}
-          changeView={this.changeView}
-        />
-      );
+      return <Articleupdate data={this.state.mod} />;
     } else if (this.state.view === "Addbrand") {
-      return (
-        <Brandeadd getProduct={this.getProduct} changeView={this.changeView} />
-      );
+      return <Brandeadd />;
     } else if (this.state.view === "Addcategorie") {
-      return (
-        <Categorieadd
-          getProduct={this.getProduct}
-          changeView={this.changeView}
-        />
-      );
+      return <Categorieadd />;
     }
   }
 
   render() {
     return (
       <div>
-        <button type="button" onClick={() => this.changeView("all")}>
+        {/* <button type="button" onClick={() => this.changeView("all")}>
           List Product
         </button>
-        <br />
+
         <button type="button" onClick={() => this.changeView("Addarticle")}>
           Add Product
         </button>
-        <br />
+
         <button type="button" onClick={() => this.changeView("Addcategorie")}>
           Add Categorie
         </button>
-        <br />
+
         <button type="button" onClick={() => this.changeView("Addbrand")}>
           Add Brand
-        </button>
-        <br />
+        </button> */}
+        <div className="sidenav">
+          <a href="#about" onClick={() => this.changeView("all")}>
+            List Product
+          </a>
+          <a href="#services" onClick={() => this.changeView("Addarticle")}>
+            Add Product
+          </a>
+          <a href="#clients" onClick={() => this.changeView("Addcategorie")}>
+            Add Categorie
+          </a>
+          <a href="#contact" onClick={() => this.changeView("Addbrand")}>
+            Add Brand
+          </a>
+        </div>
+
         {this.renderView()}
       </div>
     );

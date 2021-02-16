@@ -20,7 +20,6 @@ class Articleadd extends React.Component {
     this.handelsubmit = this.handelsubmit.bind(this);
   }
   handelChange(e) {
-    console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -147,16 +146,7 @@ class Articleadd extends React.Component {
               />
             </label>
             <br />
-            <label>
-              Image :<br />
-              <input
-                type="text"
-                name="image"
-                value={this.state.image}
-                onChange={this.handelChange}
-              />
-            </label>
-            <br />
+
             <label>
               description :<br />
               <input

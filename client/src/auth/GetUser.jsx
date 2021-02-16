@@ -10,7 +10,6 @@ function User() {
       url: "http://localhost:8000/api/auth/user"
     }).then((res) => {
       setData(res.data);
-      console.log(res.data);
     });
   };
 

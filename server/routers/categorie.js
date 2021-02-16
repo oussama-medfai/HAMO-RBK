@@ -15,7 +15,6 @@ router.route("/").get(function (req, res) {
   });
 });
 router.route("/").post(function (req, res) {
-  console.log(req.body);
   createcategorie(req.body, (er, data) => {
     if (er) {
       res.sendStatus(er);

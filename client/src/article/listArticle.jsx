@@ -11,7 +11,6 @@ class Listarticle extends Component {
       type: "DELETE",
       url: `/api/product/${id}`,
       success: (data) => {
-        this.props.getProduct();
         this.props.changeView("all");
       },
       error: (err) => console.log(err)
@@ -20,7 +19,6 @@ class Listarticle extends Component {
   render() {
     return (
       <div>
-        <h1>Product :</h1>
         {this.props.data.map((elem, index) => {
           return (
             <div className="card">

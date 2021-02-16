@@ -13,7 +13,6 @@ router.route("/login").post(function (req, res, next) {
       req.logIn(user, (err) => {
         if (err) throw err;
         res.send("Successfully Authenticated");
-        console.log(req.user);
       });
     }
   })(req, res, next);
@@ -38,16 +37,15 @@ router.route("/register").post(function (req, res) {
   });
 });
 router.route("/user").get(function (req, res) {
-  console.log(req.user, "hello");
   if (req.user) {
-    Model.find({ username: req.user.username }, (err, data) => {
-      if (err) throw err;
-      console.log(data);
-      res.send(data);
-    });
+    res.send(req.user);
   } else {
-    res.send([{ username: "", role: "" }]);
+    res.send({ username: "", role: "" });
   }
+});
+router.route("/logout").get(function (req, res) {
+  req.logout();
+  res.send();
 });
 
 module.exports = router;

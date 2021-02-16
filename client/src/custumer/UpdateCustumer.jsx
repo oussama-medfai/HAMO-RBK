@@ -18,7 +18,6 @@ class UpdateCustumer extends Component {
   }
   onChangeHandler(e) {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(e.target.value);
   }
   editCustumer() {
     var custumer = {

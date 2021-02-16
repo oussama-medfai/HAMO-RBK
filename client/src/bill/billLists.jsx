@@ -20,12 +20,11 @@ class BillLists extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
-    console.log(this.state.product);
   }
   render() {
     return (
-      <div>
-        <table>
+      <div className="center">
+        <table id="customers">
           <thead>
             <tr>
               <th>Product</th>
@@ -36,23 +35,27 @@ class BillLists extends Component {
           <tbody>
             <tr>
               <td>
-                <select
-                  name="product"
-                  value={this.state.product}
-                  onChange={this.handlechange}>
-                  <option value="">none</option>
-                  {this.props.product.map((elem) => {
-                    return <option value={elem._id}>{elem.name}</option>;
-                  })}
-                </select>
+                <th>
+                  <select
+                    name="product"
+                    value={this.state.product}
+                    onChange={this.handlechange}>
+                    <option value="">none</option>
+                    {this.props.product.map((elem) => {
+                      return <option value={elem._id}>{elem.name}</option>;
+                    })}
+                  </select>
+                </th>
               </td>
               <td>
-                <input
-                  type="number"
-                  name="quantity"
-                  onChange={this.handlechange}
-                  value={this.state.quantity}
-                />
+                <th>
+                  <input
+                    type="number"
+                    name="quantity"
+                    onChange={this.handlechange}
+                    value={this.state.quantity}
+                  />
+                </th>
               </td>
               <td>
                 <button onClick={this.add}>Add</button>

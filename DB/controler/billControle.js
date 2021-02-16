@@ -15,7 +15,6 @@ var createone =async function ({ custumer, order, total }, callbacks) {
   await  Modelproduct.findByIdAndUpdate(order[i].product, {
       $inc: { quantity: -order[i].quantity }
     }).exec((er, data) => {
-      console.log(data);
     });
   }
   bill.save(callbacks);

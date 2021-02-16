@@ -17,7 +17,6 @@ router.route("/").get(function (req, res) {
   });
 });
 router.route("/").post(function (req, res) {
-  console.log(req.body);
   creatproduct(req.body, (err, data) => {
     if (err) {
       throw err;
@@ -26,7 +25,6 @@ router.route("/").post(function (req, res) {
   });
 });
 router.route("/").put(function (req, res) {
-  console.log(req.body);
   update(req.body, (err, data) => {
     if (err) {
       throw err;
@@ -35,7 +33,6 @@ router.route("/").put(function (req, res) {
   });
 });
 router.route("/:id").delete((req, res) => {
-  console.log(req.params.id);
   deleteproduct(req.params.id, (err, data) => {
     if (err) {
       throw err;

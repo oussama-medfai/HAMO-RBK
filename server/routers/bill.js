@@ -18,7 +18,6 @@ router.route("/").get(function (req, res) {
   });
 });
 router.route("/").post(function (req, res) {
-  console.log(req.body);
   res.send(req.body);
   createone(req.body)
     .then((res) => res.send(res))

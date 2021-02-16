@@ -37,12 +37,10 @@ class Listecustumer extends Component {
   }
   onChangeHandler(e) {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(e.target.value);
   }
   fetchcustumers() {
     axios.get("/api/custumer").then((res) => {
       this.setState({ custumers: res.data });
-      console.log(this.state.custumers);
     });
   }
   componentDidMount() {
@@ -64,7 +62,7 @@ class Listecustumer extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="center">
         <h1>Customers:</h1>
         <table id="customers">
           <thead>
